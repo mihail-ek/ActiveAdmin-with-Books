@@ -1,0 +1,26 @@
+<%= image_tag @book_image.image %>
+<%= form_for(@book_image) do |f| %>
+  <% if @book_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book_image.errors.count, "error") %> prohibited this book_image from being saved:</h2>
+
+      <ul>
+      <% @book_image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :book_id %><br>
+    <%= f.number_field :book_id %>
+  </div>
+  <div class="field">
+    <%= f.label :Image %><br>
+    <%= f.text_field :Image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+<% @book_image.each do |p| %>
+  <%= image_tag p.image_url %>
+  <%= link_to "Edit Attachment", edit_book_image_path(p) %>
+<% end %>
+<%#= link_to 'Edit', edit_book_path(@book) %> 
+<%= link_to 'Back', books_path %>
